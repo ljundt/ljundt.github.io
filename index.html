@@ -3,25 +3,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="mine.css">
-    </head>
-    <script>
-    var picCount=0;
-    carousel();
-    var picArray=["pond.jpg", "monkey.jpg", "dinosaur.jpeg", "vantage.jpg"]
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for(i = 0; i < x.length; i++){
-            x[i].style.display = "none";
-        }
-        picCount++;
-        if(picCount > x.length){picCount = 1}
-        x[picCount-1].style.display = "inline";
-        setTimeout(carousel, 2000);
-    }
-    </script>
-    
-    <body onload="setTimeout('nextPic()',10000)">
+    </head>    
+    <body>
         <div class="topnav">
             <nohover>LJ</nohover>
             <a href="index.html">About Me</a>
@@ -33,7 +16,7 @@
         <h1>Lia Jundt</h1>
         <h2>Software Engineer</h2>
         <itemp>
-        <div class="picture-holder" style="max-width:300px">
+        <div class="picture-holder" style="max-width:500px">
             <img class="mySlides" src="pond.jpg" style="width:100%">
             <img class="mySlides" src="monkey.jpg" style="width:100%">
             <img class="mySlides" src="dinosaur.jpeg" style="width:100%">
@@ -45,5 +28,20 @@
         <itemp>
         In her free time, Lia enjoys Chinese martial arts, singing, and watching stand up comedy.
         </itemp>
+            <script>
+    var myIndex=0;
+    carousel();
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for(i = 0; i < x.length; i++){
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if(myIndex > x.length){myIndex = 1}
+        x[myIndex-1].style.display = "inline";
+        setTimeout(carousel, 2000);
+    }
+    </script>
     </body>
 </html>
